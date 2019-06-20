@@ -14,12 +14,12 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('postcode');
-            $table->string('country');
-            $table->string('phone');
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone')->nullable();
             $table->softDeletes();
         });
     }
