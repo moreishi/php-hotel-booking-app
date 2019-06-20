@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/users','UserController')->middleware('auth');
+Route::resource('/floors','FloorController')->middleware('auth');
