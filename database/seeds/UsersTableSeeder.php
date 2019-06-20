@@ -15,6 +15,12 @@ class UsersTableSeeder extends Seeder
         $admin = User::create([
             'first_name' => 'Super',
             'last_name' => 'Admin',
+            'address' => 'Test Address',
+            'city' => 'Test City',
+            'postcode' => 'Test Postcode',
+            'state' => 'Test State',
+            'country' => 'Test Country',
+            'phone' => '00000000000',
             'email' => 'admin@domain.com',
             'password' => \Illuminate\Support\Facades\Hash::make('secret')
         ]);
