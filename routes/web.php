@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/users','UserController')->middleware('auth');
 Route::resource('/floors','FloorController')->middleware('auth');
+Route::resource('/rooms','RoomController')->middleware('auth');
+
+Route::get('/floor/{id}/rooms','FloorController@show');

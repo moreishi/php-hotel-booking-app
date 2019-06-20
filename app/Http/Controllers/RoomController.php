@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Floor;
+use App\Room;
 
-class FloorController extends Controller
+class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FloorController extends Controller
      */
     public function index()
     {
-        $floors = Floor::paginate(7);
-        return view('floors.index',compact('floors'));
+        $rooms = Room::with('types')->paginate(7);
+        return view('rooms.index',compact('rooms'));
     }
 
     /**
@@ -47,9 +47,8 @@ class FloorController extends Controller
      */
     public function show($id)
     {
-        $floor = Floor::find($id);
-        $rooms = $floor->rooms()->paginate(7);
-        return view('floors.show',compact('floor','rooms'));
+        $room = Room::find($id);
+        return view('rooms.show',compact('room'));
     }
 
     /**
@@ -60,7 +59,8 @@ class FloorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Room::find($id);
+        return view('rooms.show',compact('room'));
     }
 
     /**
